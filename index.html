@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monkey Barber: barbería en Vieytes 2494, Bahía Blanca. Fades, color y barba con Brian Altamiranda. Reservá tu turno online.">
+  <title>Monkey Barber | Barbería en Bahía Blanca</title>
+  <link rel="icon" href="img/logo/favicon.png" type="image/png">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Rye&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina-inicio">
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca" aria-label="Monkey Barber - Inicio">
+        <img class="marca-mono" src="img/logo/mono.png" alt="">
+        <img class="marca-texto-img" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      </a>
+      <button id="boton-menu" class="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul id="menu" class="menu">
+          <li><a href="nosotros.html">La barbería</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html#galeria">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="turnos.html" class="boton boton-borde boton-chico">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Portada -->
+    <section class="hero">
+      <div class="hero-interno">
+        <img class="hero-emblema" src="img/logo/mono.png" alt="">
+        <img class="hero-logo-texto" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+        <p class="etiqueta etiqueta-centro">Est. Bahía Blanca</p>
+        <h1>Tu estilo <em>empieza</em> acá.</h1>
+        <p class="hero-bajada">Fades, color y barba de la mano de Brian Altamiranda.</p>
+        <div class="hero-botones">
+          <a href="turnos.html" class="boton">Reservar turno</a>
+          <a href="servicios.html" class="boton boton-borde">Ver servicios</a>
+        </div>
+      </div>
+      <a href="#la-casa" class="hero-scroll">Scroll</a>
+    </section>
+
+    <!-- Cinta de información (se mueve sola con CSS) -->
+    <div class="cinta" aria-label="Información rápida">
+      <ul class="cinta-pista"><li>Mar a Vie 10:30 — 20:30</li><li>Sáb 9:00 — 20:30</li><li>Dom y Lun cerrado</li><li>Vieytes 2494</li><li>Bahía Blanca</li><li>Fades</li><li>Color</li><li>Barba</li><li>Cejas</li><li>Turnos online</li></ul>
+      <ul class="cinta-pista" aria-hidden="true"><li>Mar a Vie 10:30 — 20:30</li><li>Sáb 9:00 — 20:30</li><li>Dom y Lun cerrado</li><li>Vieytes 2494</li><li>Bahía Blanca</li><li>Fades</li><li>Color</li><li>Barba</li><li>Cejas</li><li>Turnos online</li></ul>
+    </div>
+
+    <div id="la-casa"></div>
+    <!-- Banda de videos (la misma de La barbería) -->
+    <section class="encabezado-pagina con-videos banda-inicio" data-menu="nosotros.html">
+        <!-- Videos de fondo (decorativos, sin sonido) -->
+        <div class="tira-videos" aria-hidden="true">
+          <video poster="video/fade-grafiti.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/fade-grafiti.mp4" type="video/mp4">
+            <source src="video/fade-grafiti.webm" type="video/webm">
+          </video>
+          <video poster="video/corte-en-vivo.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/corte-en-vivo.mp4" type="video/mp4">
+            <source src="video/corte-en-vivo.webm" type="video/webm">
+          </video>
+          <video poster="video/terminado-1.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-1.mp4" type="video/mp4">
+            <source src="video/terminado-1.webm" type="video/webm">
+          </video>
+          <video poster="video/terminado-2.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-2.mp4" type="video/mp4">
+            <source src="video/terminado-2.webm" type="video/webm">
+          </video>
+        </div>
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Monkey Barber</p>
+        <h2>Más que un <em>corte</em>.</h2>
+        <p class="bajada">Una barbería de barrio en Bahía Blanca, con oficio, buena música y atención uno a uno.</p>
+      </div>
+    </section>
+
+    <!-- La casa -->
+    <section class="seccion" data-menu="nosotros.html">
+      <div class="contenedor dividido">
+        <figure class="foto-marco">
+          <!-- Video del local: sin sonido y en bucle -->
+          <video poster="video/la-casa.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Recorrido por el interior de Monkey Barber">
+            <source src="video/la-casa.mp4" type="video/mp4">
+            <source src="video/la-casa.webm" type="video/webm">
+          </video>
+        </figure>
+        <div class="dividido-texto">
+          <p class="etiqueta">La casa</p>
+          <h2>Una barbería de <em>barrio</em>, con oficio de verdad.</h2>
+          <p>Monkey Barber nació en Bahía Blanca con una idea simple: que cada cliente salga con un corte del que esté orgulloso. Hace casi dos años abrimos las puertas en Vieytes 2494 y desde entonces el local se convirtió en un punto de encuentro del barrio.</p>
+          <p>Paredes negras, grafiti, buena música y atención uno a uno. Sin apuro y sin atajos: cada corte lleva el tiempo que necesita.</p>
+          <a href="nosotros.html" class="enlace-flecha">Conocé la barbería &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Números -->
+    <section class="estadisticas" data-menu="nosotros.html">
+      <div class="contenedor estadisticas-interno">
+        <div><strong data-numero="2">2</strong><span>Años en el barrio</span></div>
+        <div><strong data-numero="1">1</strong><span>Barbero en la casa</span></div>
+        <div><strong data-numero="3">3</strong><span>Servicios</span></div>
+        <div><strong data-numero="5">5</strong><span>Días a la semana</span></div>
+      </div>
+    </section>
+
+    <!-- El barbero -->
+    <section class="seccion" data-menu="nosotros.html">
+      <div class="contenedor dividido invertido">
+        <div class="dividido-texto">
+          <p class="etiqueta">El barbero</p>
+          <h2>Las manos detrás del <em>oficio</em>.</h2>
+          <p>Brian Altamiranda es barbero especialista en <strong>color y fades</strong>. Se capacita constantemente en seminarios y también enseña: dicta cursos de peluquería y barbería básica para quienes quieren empezar en el oficio.</p>
+          <ul class="lista-oficio">
+            <li>Fades: high, mid, low y taper</li>
+            <li>Color, mechas y platinados</li>
+            <li>Diseño de barba y cejas</li>
+            <li>Cursos de barbería básica</li>
+          </ul>
+          <a href="https://www.instagram.com/altamirandabrai/" class="enlace-flecha" target="_blank" rel="noopener">Seguilo en @altamirandabrai &rarr;</a>
+        </div>
+        <!-- Carrusel de fotos de Brian (lo maneja main.js) -->
+        <div class="carrusel tarjeta-barbero" id="carrusel-brian" role="region" aria-roledescription="carrusel" aria-label="Fotos de Brian">
+          <figure class="carrusel-slide activo">
+            <img src="img/local/brian.jpg" alt="Brian Altamiranda, barbero de Monkey Barber">
+            <figcaption><strong>Brian</strong><span>Barbero · Color &amp; fades</span></figcaption>
+          </figure>
+          <figure class="carrusel-slide">
+            <img src="img/local/brian-2.jpg" alt="Brian cortando el pelo a un cliente" loading="lazy">
+            <figcaption><strong>En acción</strong><span>Cada corte, a medida</span></figcaption>
+          </figure>
+          <figure class="carrusel-slide">
+            <img src="img/local/brian-3.jpg" alt="Brian trabajando en la barbería" loading="lazy">
+            <figcaption><strong>Al detalle</strong><span>Fades y terminaciones</span></figcaption>
+          </figure>
+          <figure class="carrusel-slide">
+            <img src="img/local/brian-4.jpg" alt="Brian dando un curso de barbería en el local" loading="lazy">
+            <figcaption><strong>Cursos</strong><span>Barbería básica en el local</span></figcaption>
+          </figure>
+          <button type="button" class="carrusel-flecha anterior" aria-label="Foto anterior">&#8249;</button>
+          <button type="button" class="carrusel-flecha siguiente" aria-label="Foto siguiente">&#8250;</button>
+          <div class="carrusel-puntos"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frase -->
+    <section class="cita" data-menu="nosotros.html">
+      <div class="contenedor">
+        <blockquote>
+          <p>“El corte lo hacemos nosotros. <em>El estilo lo ponés vos.</em>”</p>
+          <footer>— Monkey Barber</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="seccion seccion-verde" id="servicios" data-menu="servicios.html">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Servicios</p>
+        <h2 class="centrado">El <em>menú</em> de la casa.</h2>
+        <div id="servicios-destacados" class="grilla-servicios"></div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="seccion" id="galeria" data-menu="nosotros.html#galeria">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">El feed de la casa</p>
+        <h2 class="centrado">Cada foto, un corte <em>real</em>.</h2>
+        <div class="galeria">
+          <img src="img/cortes/corte-1.jpg" alt="Corte de cliente 1" loading="lazy">
+          <img src="img/cortes/corte-2.jpg" alt="Corte de cliente 2" loading="lazy">
+          <img src="img/cortes/corte-3.jpg" alt="Corte de cliente 3" loading="lazy">
+          <img src="img/cortes/corte-4.jpg" alt="Corte de cliente 4" loading="lazy">
+        </div>
+        <p class="centrado"><a href="nosotros.html#galeria" class="boton boton-borde">Ver la galería completa</a></p>
+      </div>
+    </section>
+
+    <!-- Reseñas de Google (las carga main.js desde datos.js) -->
+    <section class="seccion seccion-verde" id="resenas">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Reseñas</p>
+        <h2 class="centrado">Lo que dicen quienes pasaron por la <em>silla</em>.</h2>
+        <div class="resenas-resumen">
+          <span id="resenas-puntaje" class="resenas-puntaje"></span>
+          <div>
+            <span id="resenas-estrellas" class="resenas-estrellas" aria-hidden="true"></span>
+            <span id="resenas-cantidad" class="resenas-cantidad"></span>
+          </div>
+        </div>
+        <div id="lista-resenas" class="grilla-resenas"></div>
+        <p class="centrado botones-resenas">
+          <a href="#" data-resenas-ver class="boton boton-borde" target="_blank" rel="noopener">Ver todas en Google</a>
+          <a href="#" data-resena-escribir class="boton" target="_blank" rel="noopener">Dejá tu reseña</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="seccion" data-menu="contacto.html">
+      <div class="contenedor dividido">
+        <div class="dividido-texto">
+          <p class="etiqueta">Reservá tu turno</p>
+          <h2>Pasá por la <em>barbería</em>.</h2>
+          <p>El primer corte siempre es la mejor presentación. Te esperamos en Bahía Blanca.</p>
+          <dl class="filas-contacto">
+            <div><dt>Dirección</dt><dd>Vieytes 2494, Bahía Blanca</dd></div>
+            <div><dt>Horarios <span id="estado-local" class="estado"></span></dt><dd><ul id="lista-horarios" class="lista-horarios"></ul></dd></div>
+            <div><dt>WhatsApp</dt><dd><a href="#" data-whatsapp target="_blank" rel="noopener">+54 9 291 534-6482</a></dd></div>
+            <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">@monkey.barberclub1</a></dd></div>
+            <div><dt>Reservas</dt><dd>Turnos online desde esta página</dd></div>
+          </dl>
+          <a href="turnos.html" class="boton">Reservar turno &nearr;</a>
+        </div>
+        <iframe class="mapa" title="Mapa de Monkey Barber en Vieytes 2494, Bahía Blanca"
+          src="https://www.google.com/maps?q=Vieytes+2494,+Bah%C3%ADa+Blanca,+Buenos+Aires&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- Cómo reservar -->
+    <section class="seccion seccion-verde" data-menu="turnos.html">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Turnos online</p>
+        <h2 class="centrado">Tu turno en <em>tres</em> pasos.</h2>
+        <ol class="pasos">
+          <li><span class="paso-numero">I</span><h3>Elegí el servicio</h3><p>Corte, barba, cejas o el combo completo, con precio y duración a la vista.</p></li>
+          <li><span class="paso-numero">II</span><h3>Elegí día y horario</h3><p>Solo ves los horarios libres, de martes a sábados.</p></li>
+          <li><span class="paso-numero">III</span><h3>Confirmá por WhatsApp</h3><p>Se arma el mensaje con tu turno y se lo mandás a Brian con un toque.</p></li>
+        </ol>
+        <p class="centrado"><a href="turnos.html" class="boton">Reservar turno</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor pie-interno">
+      <img class="pie-mono" src="img/logo/mono.png" alt="">
+      <img class="pie-logo-texto" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      <p class="pie-frase">Tu estilo empieza acá.</p>
+      <ul class="pie-enlaces">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="turnos.html">Turnos</a></li>
+        <li><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+      <p class="pie-copy">&copy; <span id="anio"></span> Monkey Barber · Vieytes 2494, Bahía Blanca. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios de Monkey Barber con precios y duración: corte regular (con cejas y barba), corte para niños y corte para jubilados.">
+  <title>Servicios y precios | Monkey Barber</title>
+  <link rel="icon" href="img/logo/favicon.png" type="image/png">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Rye&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca" aria-label="Monkey Barber - Inicio">
+        <img class="marca-mono" src="img/logo/mono.png" alt="">
+        <img class="marca-texto-img" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      </a>
+      <button id="boton-menu" class="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul id="menu" class="menu">
+          <li><a href="nosotros.html">La barbería</a></li>
+          <li><a href="servicios.html" class="activo" aria-current="page">Servicios</a></li>
+          <li><a href="nosotros.html#galeria">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="turnos.html" class="boton boton-borde boton-chico">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="encabezado-pagina con-videos">
+        <!-- Videos de fondo (decorativos, sin sonido) -->
+        <div class="tira-videos" aria-hidden="true">
+          <video poster="video/corte-en-vivo.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/corte-en-vivo.mp4" type="video/mp4">
+            <source src="video/corte-en-vivo.webm" type="video/webm">
+          </video>
+          <video poster="video/terminado-1.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-1.mp4" type="video/mp4">
+            <source src="video/terminado-1.webm" type="video/webm">
+          </video>
+          <video poster="video/terminado-2.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-2.mp4" type="video/mp4">
+            <source src="video/terminado-2.webm" type="video/webm">
+          </video>
+          <video poster="video/fade-grafiti.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/fade-grafiti.mp4" type="video/mp4">
+            <source src="video/fade-grafiti.webm" type="video/webm">
+          </video>
+        </div>
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Servicios</p>
+        <h1>El <em>menú</em> de la casa.</h1>
+        <p class="bajada">Elegí tu servicio y reservá el turno directamente desde la tarjeta.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div id="servicios-todos" class="grilla-servicios"></div>
+        <p class="nota centrado">Precios en pesos argentinos. Pueden cambiar sin previo aviso; ante cualquier duda, consultá por WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- Cómo reservar -->
+    <section class="seccion" data-menu="turnos.html">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Turnos online</p>
+        <h2 class="centrado">Tu turno en <em>tres</em> pasos.</h2>
+        <ol class="pasos">
+          <li><span class="paso-numero">I</span><h3>Elegí el servicio</h3><p>Corte, barba, cejas o el combo completo, con precio y duración a la vista.</p></li>
+          <li><span class="paso-numero">II</span><h3>Elegí día y horario</h3><p>Solo ves los horarios libres, de martes a sábados.</p></li>
+          <li><span class="paso-numero">III</span><h3>Confirmá por WhatsApp</h3><p>Se arma el mensaje con tu turno y se lo mandás a Brian con un toque.</p></li>
+        </ol>
+        <p class="centrado"><a href="turnos.html" class="boton">Reservar turno</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor pie-interno">
+      <img class="pie-mono" src="img/logo/mono.png" alt="">
+      <img class="pie-logo-texto" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      <p class="pie-frase">Tu estilo empieza acá.</p>
+      <ul class="pie-enlaces">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="turnos.html">Turnos</a></li>
+        <li><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+      <p class="pie-copy">&copy; <span id="anio"></span> Monkey Barber · Vieytes 2494, Bahía Blanca. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

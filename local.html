@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Precios, pago con Mercado Pago, ruleta de descuentos y WiFi de Monkey Barber.">
+  <title>En el local | Monkey Barber</title>
+  <link rel="icon" href="img/logo/favicon.png" type="image/png">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Rye&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca" aria-label="Monkey Barber - Inicio">
+        <img class="marca-mono" src="img/logo/mono.png" alt="">
+        <img class="marca-texto-img" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      </a>
+      <button id="boton-menu" class="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul id="menu" class="menu">
+          <li><a href="nosotros.html">La barbería</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html#galeria">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="turnos.html" class="boton boton-borde boton-chico">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="encabezado-pagina encabezado-local">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Bienvenido a la casa</p>
+        <h1>Ponete <em>cómodo</em>.</h1>
+        <p class="bajada">Mirá los precios, pagá con Mercado Pago y probá suerte con la ruleta.</p>
+        <nav class="menu-local" aria-label="Secciones de esta página">
+          <a href="#precios">Precios</a>
+          <a href="#pagar">Pagar</a>
+          <a href="#ruleta">Ruleta</a>
+          <a href="#wifi">WiFi</a>
+          <a href="#resena">Reseña</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="seccion seccion-local">
+      <div class="contenedor local">
+
+        <!-- PREMIO VIGENTE (lo muestra ruleta.js si el cliente ganó) -->
+        <div id="aviso-premio" class="aviso-premio" hidden></div>
+
+        <!-- PRECIOS -->
+        <section id="precios" class="bloque-local" aria-labelledby="titulo-precios">
+          <p class="paso-etiqueta">Lista de precios</p>
+          <h2 id="titulo-precios">Nuestros <em>servicios</em></h2>
+          <ul id="lista-precios" class="lista-precios"></ul>
+          <p class="nota">Precios en pesos argentinos.</p>
+        </section>
+
+        <!-- PAGAR -->
+        <section id="pagar" class="bloque-local" aria-labelledby="titulo-pagar">
+          <p class="paso-etiqueta">Pagá desde el celular</p>
+          <h2 id="titulo-pagar">Mercado <em>Pago</em></h2>
+          <dl class="datos-wifi">
+            <div><dt>Alias</dt><dd id="pago-alias"></dd></div>
+            <div><dt>Titular</dt><dd id="pago-titular"></dd></div>
+          </dl>
+          <div class="botones-pago">
+            <a id="boton-mp" class="boton boton-mp" href="#" target="_blank" rel="noopener">Pagar con Mercado Pago</a>
+            <button id="boton-copiar-alias" type="button" class="boton boton-borde">Copiar alias</button>
+          </div>
+          <p id="ayuda-pago" class="nota">Abrí Mercado Pago, tocá <strong>Transferir</strong>, pegá el alias y poné el monto del servicio. Después mostrale el comprobante a Brian.</p>
+        </section>
+
+        <!-- RULETA -->
+        <section id="ruleta" class="bloque-local" aria-labelledby="titulo-ruleta">
+          <p class="paso-etiqueta">Ruleta Monkey</p>
+          <h2 id="titulo-ruleta">Girá y <em>probá suerte</em></h2>
+          <p>Se gira acá en la barbería, <strong>delante de Brian</strong>. Podés ganar descuentos para el corte de hoy o hasta un <strong>corte gratis</strong>.</p>
+
+          <div class="ruleta">
+            <span class="ruleta-indicador" aria-hidden="true"></span>
+            <div id="rueda" class="rueda" aria-hidden="true"></div>
+            <span class="ruleta-centro" aria-hidden="true"><img src="img/logo/mono.png" alt=""></span>
+          </div>
+
+          <!-- Desbloqueo: Brian escribe el código del día en el celular del cliente -->
+          <div id="desbloqueo" class="desbloqueo">
+            <p class="desbloqueo-titulo">Pedile a Brian que habilite tu tirada</p>
+            <label for="codigo-brian">Código de Brian</label>
+            <div class="desbloqueo-fila">
+              <input type="password" id="codigo-brian" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="••••">
+              <button id="boton-habilitar" type="button" class="boton">Habilitar</button>
+            </div>
+            <p id="aviso-codigo" class="aviso" aria-live="polite"></p>
+          </div>
+
+          <button id="boton-girar" type="button" class="boton boton-girar" hidden>Girar la ruleta</button>
+          <div id="resultado" class="resultado" aria-live="polite" hidden></div>
+
+          <details class="condiciones">
+            <summary>Probabilidades y condiciones</summary>
+            <ul id="lista-probabilidades" class="lista-probabilidades"></ul>
+            <ul class="lista-condiciones">
+              <li>La ruleta se gira en el local, delante de Brian, que habilita cada tirada.</li>
+              <li>Una tirada por visita.</li>
+              <li>El premio vale solo para el servicio de ese día. No acumulable con otras promociones.</li>
+              <li>El corte gratis es válido para el corte regular.</li>
+              <li>No se canjea por dinero. Un premio por servicio.</li>
+              <li>Monkey Barber puede modificar o finalizar la promoción en cualquier momento.</li>
+            </ul>
+          </details>
+        </section>
+
+        <!-- WIFI -->
+        <section id="wifi" class="bloque-local" aria-labelledby="titulo-wifi">
+          <p class="paso-etiqueta">WiFi para clientes</p>
+          <h2 id="titulo-wifi">Conectate <em>gratis</em></h2>
+          <dl class="datos-wifi">
+            <div><dt>Red</dt><dd id="wifi-red"></dd></div>
+            <div><dt>Contraseña</dt><dd id="wifi-clave"></dd></div>
+          </dl>
+          <button id="boton-copiar" type="button" class="boton">Copiar contraseña</button>
+          <p class="nota">También podés escanear el QR de WiFi del cartel y tu celular se conecta solo.</p>
+        </section>
+
+        <!-- RESEÑA -->
+        <section id="resena" class="bloque-local" aria-labelledby="titulo-resena">
+          <p class="paso-etiqueta">¿Te gustó el corte?</p>
+          <h2 id="titulo-resena">Dejanos tu <em>reseña</em></h2>
+          <p>Nos ayuda muchísimo a que más gente conozca la barbería. Es un minuto en Google.</p>
+          <a href="#" data-resena-escribir class="boton" target="_blank" rel="noopener">Escribir reseña en Google</a>
+        </section>
+
+        <p class="centrado"><a href="turnos.html" class="enlace-flecha">Reservá tu próximo turno &rarr;</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor pie-interno">
+      <img class="pie-mono" src="img/logo/mono.png" alt="">
+      <img class="pie-logo-texto" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      <p class="pie-frase">Tu estilo empieza acá.</p>
+      <ul class="pie-enlaces">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="turnos.html">Turnos</a></li>
+        <li><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+      <p class="pie-copy">&copy; <span id="anio"></span> Monkey Barber · Vieytes 2494, Bahía Blanca. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ruleta.js"></script>
+</body>
+</html>

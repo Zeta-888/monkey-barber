@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reservá tu turno en Monkey Barber: elegí el servicio, el día y el horario, y confirmá por WhatsApp.">
+  <title>Reservar turno | Monkey Barber</title>
+  <link rel="icon" href="img/logo/favicon.png" type="image/png">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Rye&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca" aria-label="Monkey Barber - Inicio">
+        <img class="marca-mono" src="img/logo/mono.png" alt="">
+        <img class="marca-texto-img" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      </a>
+      <button id="boton-menu" class="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul id="menu" class="menu">
+          <li><a href="nosotros.html">La barbería</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html#galeria">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="turnos.html" class="boton boton-borde boton-chico">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="encabezado-pagina con-videos">
+        <!-- Videos de fondo (decorativos, sin sonido) -->
+        <div class="tira-videos" aria-hidden="true">
+          <video poster="video/terminado-1.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-1.mp4" type="video/mp4">
+            <source src="video/terminado-1.webm" type="video/webm">
+          </video>
+          <video poster="video/terminado-2.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-2.mp4" type="video/mp4">
+            <source src="video/terminado-2.webm" type="video/webm">
+          </video>
+          <video poster="video/fade-grafiti.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/fade-grafiti.mp4" type="video/mp4">
+            <source src="video/fade-grafiti.webm" type="video/webm">
+          </video>
+          <video poster="video/corte-en-vivo.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/corte-en-vivo.mp4" type="video/mp4">
+            <source src="video/corte-en-vivo.webm" type="video/webm">
+          </video>
+        </div>
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Reserva online</p>
+        <h1>Reservá tu <em>turno</em>.</h1>
+        <p class="bajada">Martes a viernes de 10:30 a 20:30 y sábados de 9:00 a 20:30, con Brian Altamiranda.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor reserva">
+
+        <!-- PASO 1: Servicio -->
+        <section id="paso-1" class="paso">
+          <p class="paso-etiqueta">Paso I</p>
+          <h2>Elegí el servicio</h2>
+          <div id="lista-servicios" class="lista-opciones" role="radiogroup" aria-label="Servicios"></div>
+        </section>
+
+        <!-- PASO 2: Fecha y horario -->
+        <section id="paso-2" class="paso bloqueado">
+          <p class="paso-etiqueta">Paso II</p>
+          <h2>Elegí día y horario</h2>
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha">
+          <p id="aviso-fecha" class="aviso" aria-live="polite"></p>
+          <div id="grilla-horarios" class="grilla-horarios"></div>
+          <p class="leyenda"><span class="muestra libre"></span> Libre <span class="muestra ocupado"></span> Ocupado</p>
+        </section>
+
+        <!-- PASO 3: Datos -->
+        <section id="paso-3" class="paso bloqueado">
+          <p class="paso-etiqueta">Paso III</p>
+          <h2>Tus datos</h2>
+          <form id="form-turno" class="formulario" action="#" method="post">
+            <label for="t-nombre">Nombre y apellido</label>
+            <input type="text" id="t-nombre" name="nombre" required maxlength="40" placeholder="Ej.: Juan Pérez">
+
+            <label for="t-telefono">Teléfono</label>
+            <input type="tel" id="t-telefono" name="telefono" required maxlength="20" placeholder="Ej.: 291 456-7890">
+
+            <label for="t-comentario">Comentario (opcional)</label>
+            <textarea id="t-comentario" name="comentario" rows="3" maxlength="200" placeholder="Ej.: quiero un low fade con raya marcada"></textarea>
+
+            <button type="submit" class="boton">Ver resumen del turno</button>
+          </form>
+        </section>
+
+        <!-- RESUMEN -->
+        <section id="resumen" class="paso resumen" hidden>
+          <p class="paso-etiqueta">Último paso</p>
+          <h2>Tu turno está <em>casi listo</em>.</h2>
+          <p>Revisá los datos y confirmalo enviándole el mensaje a Brian por WhatsApp.</p>
+          <table class="tabla-resumen">
+            <tr><th>Servicio</th><td id="r-servicio"></td></tr>
+            <tr><th>Día</th><td id="r-fecha"></td></tr>
+            <tr><th>Hora</th><td id="r-hora"></td></tr>
+            <tr><th>Precio</th><td id="r-precio"></td></tr>
+            <tr><th>A nombre de</th><td id="r-nombre"></td></tr>
+          </table>
+          <div class="resumen-botones">
+            <a id="boton-whatsapp" class="boton boton-whatsapp" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+            <button id="boton-otro" type="button" class="boton boton-borde">Reservar otro turno</button>
+          </div>
+          <p class="nota">El turno queda confirmado cuando Brian te responde el mensaje.</p>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor pie-interno">
+      <img class="pie-mono" src="img/logo/mono.png" alt="">
+      <img class="pie-logo-texto" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      <p class="pie-frase">Tu estilo empieza acá.</p>
+      <ul class="pie-enlaces">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="turnos.html">Turnos</a></li>
+        <li><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+      <p class="pie-copy">&copy; <span id="anio"></span> Monkey Barber · Vieytes 2494, Bahía Blanca. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/turnos.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactá a Monkey Barber: dirección, horarios, WhatsApp, Instagram y formulario de consulta.">
+  <title>Contacto | Monkey Barber</title>
+  <link rel="icon" href="img/logo/favicon.png" type="image/png">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Rye&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca" aria-label="Monkey Barber - Inicio">
+        <img class="marca-mono" src="img/logo/mono.png" alt="">
+        <img class="marca-texto-img" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      </a>
+      <button id="boton-menu" class="boton-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul id="menu" class="menu">
+          <li><a href="nosotros.html">La barbería</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html#galeria">Galería</a></li>
+          <li><a href="contacto.html" class="activo" aria-current="page">Contacto</a></li>
+          <li><a href="turnos.html" class="boton boton-borde boton-chico">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="encabezado-pagina con-videos">
+        <!-- Videos de fondo (decorativos, sin sonido) -->
+        <div class="tira-videos" aria-hidden="true">
+          <video poster="video/terminado-2.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-2.mp4" type="video/mp4">
+            <source src="video/terminado-2.webm" type="video/webm">
+          </video>
+          <video poster="video/fade-grafiti.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/fade-grafiti.mp4" type="video/mp4">
+            <source src="video/fade-grafiti.webm" type="video/webm">
+          </video>
+          <video poster="video/corte-en-vivo.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/corte-en-vivo.mp4" type="video/mp4">
+            <source src="video/corte-en-vivo.webm" type="video/webm">
+          </video>
+          <video poster="video/terminado-1.jpg" muted autoplay loop playsinline preload="metadata">
+            <source src="video/terminado-1.mp4" type="video/mp4">
+            <source src="video/terminado-1.webm" type="video/webm">
+          </video>
+        </div>
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-centro">Contacto</p>
+        <h1>Pasá por la <em>barbería</em>.</h1>
+        <p class="bajada">¿Tenés una consulta sobre un servicio, un curso o un evento? Escribinos.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor dividido arriba">
+        <form id="form-contacto" class="formulario" action="#" method="post">
+          <p class="etiqueta">Escribinos</p>
+          <label for="c-nombre">Nombre</label>
+          <input type="text" id="c-nombre" name="nombre" required maxlength="40">
+
+          <label for="c-email">Correo electrónico</label>
+          <input type="email" id="c-email" name="email" required>
+
+          <label for="c-telefono">Teléfono</label>
+          <input type="tel" id="c-telefono" name="telefono" maxlength="20">
+
+          <label for="c-motivo">Motivo</label>
+          <select id="c-motivo" name="motivo">
+            <option>Consulta sobre servicios</option>
+            <option>Cursos de barbería</option>
+            <option>Otro</option>
+          </select>
+
+          <label for="c-mensaje">Mensaje</label>
+          <textarea id="c-mensaje" name="mensaje" rows="4" maxlength="300" required></textarea>
+
+          <button type="submit" class="boton">Enviar mensaje</button>
+          <p id="aviso-contacto" class="aviso aviso-ok" hidden></p>
+        </form>
+
+        <div class="dividido-texto">
+          <p class="etiqueta">Datos</p>
+          <dl class="filas-contacto">
+            <div><dt>Dirección</dt><dd>Vieytes 2494, Bahía Blanca</dd></div>
+            <div><dt>Horarios <span id="estado-local" class="estado"></span></dt><dd><ul id="lista-horarios" class="lista-horarios"></ul></dd></div>
+            <div><dt>WhatsApp</dt><dd><a href="#" data-whatsapp target="_blank" rel="noopener">+54 9 291 534-6482</a></dd></div>
+            <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">@monkey.barberclub1</a></dd></div>
+            <div><dt>Reservas</dt><dd>Turnos online desde esta página</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="contenedor">
+        <iframe class="mapa" title="Mapa de Monkey Barber en Vieytes 2494, Bahía Blanca"
+          src="https://www.google.com/maps?q=Vieytes+2494,+Bah%C3%ADa+Blanca,+Buenos+Aires&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor pie-interno">
+      <img class="pie-mono" src="img/logo/mono.png" alt="">
+      <img class="pie-logo-texto" src="img/logo/monkey-barber.svg" alt="Monkey Barber">
+      <p class="pie-frase">Tu estilo empieza acá.</p>
+      <ul class="pie-enlaces">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="turnos.html">Turnos</a></li>
+        <li><a href="https://www.instagram.com/monkey.barberclub1/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" data-whatsapp target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+      <p class="pie-copy">&copy; <span id="anio"></span> Monkey Barber · Vieytes 2494, Bahía Blanca. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
