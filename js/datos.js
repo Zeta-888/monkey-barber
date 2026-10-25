@@ -123,7 +123,7 @@ const SERVICIOS = [
     nombre: "Corte regular",
     descripcion: "High, Mid o Low Fade, Taper, Buzz Cut, Moicano y más, con terminación a navaja. Incluye perfilado de cejas y barba.",
     duracion: 60,
-    precio: 25000,
+    precio: 18000,
     icono: "tijera",
     imagen: "img/servicios-fotos/corte-regular.jpg",
     linkPago: ""
@@ -133,7 +133,7 @@ const SERVICIOS = [
     nombre: "Corte para niños",
     descripcion: "Corte infantil con paciencia y buena onda, para que los más chicos salgan contentos.",
     duracion: 60,
-    precio: 20000,
+    precio: 12000,
     icono: "nino",
     imagen: "img/servicios-fotos/corte-nino.jpg",
     linkPago: ""
@@ -143,7 +143,7 @@ const SERVICIOS = [
     nombre: "Corte para jubilados",
     descripcion: "Corte clásico o moderno, a gusto de cada uno, con precio especial para jubilados.",
     duracion: 60,
-    precio: 18000,           // PRECIO DE EJEMPLO: confirmar con Brian
+    precio: 10000,           // PRECIO DE EJEMPLO: confirmar con Brian
     icono: "peine",
     imagen: "img/servicios-fotos/corte-jubilado.jpg",
     linkPago: ""
