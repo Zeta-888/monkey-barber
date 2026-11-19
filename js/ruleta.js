@@ -77,7 +77,7 @@ function guardar(clave, valor) {
    Se guarda aparte de la tirada del día porque dura varios días.
    ========================================================= */
 function premioVigente() {
-  const premio = leerGuardado("premioMonkey");
+  const premio = leerGuardado("premioAlt");
   if (premio === null) return null;
 
   /* Si ya venció, no cuenta */
@@ -188,8 +188,8 @@ function dibujarRuleta() {
   let etiquetas = "";
 
   for (let i = 0; i < CANTIDAD; i++) {
-    let color = (i % 2 === 0) ? "#16231e" : "#0d1512";
-    if (PREMIOS[i].destacado) color = "#c98a4b";
+    let color = (i % 2 === 0) ? "#1b1b21" : "#111115";
+    if (PREMIOS[i].destacado) color = "#ef3e45";
 
     const inicio = i * GRADOS_PORCION;
     const fin = inicio + GRADOS_PORCION;
@@ -294,7 +294,7 @@ inputCodigo.addEventListener("keydown", function (evento) {
 });
 
 botonGirar.addEventListener("click", function () {
-  const anterior = leerGuardado("ruletaMonkey");
+  const anterior = leerGuardado("ruletaAlt");
   if (anterior && anterior.fecha === hoyTexto()) {
     mostrarResultado(anterior);
     bloquearPorHoy();
@@ -331,12 +331,12 @@ botonGirar.addEventListener("click", function () {
       vence: fechaCorta(vence),
       hora: String(ahora.getHours()).padStart(2, "0") + ":" + String(ahora.getMinutes()).padStart(2, "0")
     };
-    guardar("ruletaMonkey", tirada);
+    guardar("ruletaAlt", tirada);
 
     /* Si ganó, se guarda el premio vigente y se actualizan los precios */
     const premio = PREMIOS[indice];
     if (premio.premio) {
-      guardar("premioMonkey", {
+      guardar("premioAlt", {
         texto: premio.texto,
         descuento: premio.descuento,
         soloServicio: premio.soloServicio || null,
@@ -396,7 +396,7 @@ dibujarRuleta();
 mostrarProbabilidades();
 
 /* Si ya giró hoy, la ruleta queda frenada en su premio */
-const tiradaDeHoy = leerGuardado("ruletaMonkey");
+const tiradaDeHoy = leerGuardado("ruletaAlt");
 if (tiradaDeHoy && tiradaDeHoy.fecha === hoyTexto()) {
   const centro = tiradaDeHoy.indice * GRADOS_PORCION + GRADOS_PORCION / 2;
   rotacionActual = 360 - centro;

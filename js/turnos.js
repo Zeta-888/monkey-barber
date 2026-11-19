@@ -80,7 +80,7 @@ function turnosDeEjemplo(texto) {
 /* Turnos guardados por el usuario en este navegador */
 function leerTurnosGuardados() {
   try {
-    const datos = localStorage.getItem("turnosMonkey");
+    const datos = localStorage.getItem("turnosAlt");
     return datos ? JSON.parse(datos) : [];
   } catch (error) {
     return [];
@@ -91,7 +91,7 @@ function guardarTurno(turno) {
   const turnos = leerTurnosGuardados();
   turnos.push(turno);
   try {
-    localStorage.setItem("turnosMonkey", JSON.stringify(turnos));
+    localStorage.setItem("turnosAlt", JSON.stringify(turnos));
   } catch (error) {
     /* Si el navegador no permite guardar, el turno igual se envía por WhatsApp */
   }
@@ -255,7 +255,7 @@ formTurno.addEventListener("submit", function (evento) {
 
   /* Mensaje que le llega a Brian por WhatsApp */
   let mensaje =
-    "¡Hola Brian! Quiero reservar un turno en Monkey Barber 💈\n\n" +
+    "¡Hola Brian! Quiero reservar un turno en Alt Barbers 💈\n\n" +
     "✂️ Servicio: " + servicioElegido.nombre + "\n" +
     "📅 Día: " + fechaLarga(fechaElegida) + "\n" +
     "🕐 Hora: " + minutosAHora(horaElegida) + " hs\n" +

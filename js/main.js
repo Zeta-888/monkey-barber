@@ -22,7 +22,7 @@ if (spanAnio) {
 /* ---------- Enlaces de WhatsApp genéricos ---------- */
 const enlacesWhatsapp = document.querySelectorAll("[data-whatsapp]");
 for (let i = 0; i < enlacesWhatsapp.length; i++) {
-  enlacesWhatsapp[i].href = enlaceWhatsapp("¡Hola Brian! Te escribo desde la página de Monkey Barber.");
+  enlacesWhatsapp[i].href = enlaceWhatsapp("¡Hola Brian! Te escribo desde la página de Alt Barbers.");
 }
 
 /* ---------- Tabla de horarios (resalta el día de hoy) ---------- */
@@ -126,6 +126,12 @@ function estrellasTexto(cantidad) {
 }
 
 function mostrarResenas() {
+  /* Si las reseñas están desactivadas en datos.js, se ocultan la sección y sus enlaces */
+  if (RESENAS.mostrar === false) {
+    const ocultar = document.querySelectorAll("#resenas, #resena, a[href='#resena']");
+    for (let i = 0; i < ocultar.length; i++) ocultar[i].hidden = true;
+    return;
+  }
   const contenedor = document.getElementById("lista-resenas");
   if (!contenedor) return;
 

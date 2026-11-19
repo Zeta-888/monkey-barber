@@ -17,8 +17,8 @@ setInterval(mostrarCodigo, 60000);
 /* ---------- Reiniciar la ruleta en este navegador (para pruebas) ---------- */
 document.getElementById("boton-reiniciar").addEventListener("click", function () {
   try {
-    localStorage.removeItem("ruletaMonkey");
-    localStorage.removeItem("premioMonkey");
+    localStorage.removeItem("ruletaAlt");
+    localStorage.removeItem("premioAlt");
     document.getElementById("aviso-reinicio").textContent =
       "Listo: ya podés volver a girar la ruleta en este navegador.";
   } catch (error) {

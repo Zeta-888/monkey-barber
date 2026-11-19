@@ -1,18 +1,17 @@
 /* =========================================================
-   datos.js — Información del negocio (Monkey Barber)
+   datos.js — Información del negocio (Alt Barbers)
    Todos los datos están en variables y arrays para poder
    modificarlos en un solo lugar sin tocar el HTML.
    ========================================================= */
 
 const NEGOCIO = {
-  nombre: "Monkey Barber",
+  nombre: "Alt Barbers",
   barbero: "Brian Altamiranda",
-  direccion: "Vieytes 2494, Bahía Blanca",
+  direccion: "Bahía Blanca",          // dirección exacta: se pasa por WhatsApp al confirmar
   whatsapp: "5492915346482",          // formato internacional sin + ni espacios
   whatsappVisible: "+54 9 291 534-6482",
-  instagramLocal: "https://www.instagram.com/monkey.barberclub1/",
   instagramBrian: "https://www.instagram.com/altamirandabrai/",
-  mapa: "https://maps.app.goo.gl/6WSRA6rQ1h4XJJ6b7"
+  mapa: ""                           // link de Google Maps cuando haya dirección pública
 };
 
 /* Horario de atención: índice = día de la semana de getDay()
@@ -39,8 +38,8 @@ const INTERVALO_TURNOS = 30;
    DATOS DE EJEMPLO: reemplazar por la red real del local.
    Si se cambian, hay que volver a generar el QR de WiFi del cartel. */
 const WIFI = {
-  red: "MonkeyBarber_Clientes",
-  clave: "monkey2026",
+  red: "AltBarbers_Clientes",
+  clave: "alt2026",
   seguridad: "WPA"
 };
 
@@ -92,7 +91,7 @@ function codigoDelDia(fecha) {
    Además, cada servicio puede tener su propio "linkPago" con el precio fijo
    (se crean desde la app de Mercado Pago, en la opción de cobrar con link de pago). */
 const PAGOS = {
-  alias: "monkey.barber.mp",
+  alias: "alt.barbers.mp",
   titular: "Brian Altamiranda",
   linkGeneral: ""
 };
@@ -100,7 +99,10 @@ const PAGOS = {
 /* ---------- Reseñas de Google ----------
    Copiadas de Google Maps (octubre de 2026). Se muestran con el nombre y la inicial del apellido.
    Cuando haya reseñas nuevas, se actualizan acá a mano: puntaje, cantidad y la lista. */
+/* mostrar: false oculta las reseñas. Las de abajo son de la ficha de Google del local
+   anterior (Monkey Barber, cerrado); se vuelven a mostrar cuando Alt Barbers tenga su ficha. */
 const RESENAS = {
+  mostrar: false,
   puntaje: 4.7,
   cantidad: 21,
   actualizado: "octubre de 2026",
