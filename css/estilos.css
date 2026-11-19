@@ -1,20 +1,23 @@
 /* =========================================================
-   estilos.css — Monkey Barber
-   Estilo clásico de barbería: verde muy oscuro, cobre y crema,
+   estilos.css — Alt Barbers
+   Estilo de barbería con luz de neón: negro, rojo neón y crema,
    títulos con serif elegante y etiquetas en mayúsculas espaciadas.
    ========================================================= */
 
 /* ---------- Variables: paleta y tipografías (manual 3.10) ---------- */
 :root {
-  --fondo: #0a0e0c;           /* casi negro con tono verde */
-  --verde: #0f1814;           /* secciones alternadas */
-  --verde-claro: #16231e;     /* tarjetas */
-  --linea: rgba(201, 138, 75, .22);
-  --linea-suave: rgba(247, 243, 239, .08);
-  --cobre: #c98a4b;
-  --cobre-oscuro: #b77636;
-  --arena: #9d8972;           /* texto secundario */
-  --crema: #f7f3ef;
+  /* Paleta de Alt Barbers: negro, rojo neón (como el cartel) y azul del poste.
+     Los nombres de las variables se mantienen para no tocar el resto de la hoja. */
+  --fondo: #0b0b0d;           /* casi negro */
+  --verde: #131317;           /* secciones alternadas (gris muy oscuro) */
+  --verde-claro: #1b1b21;     /* tarjetas */
+  --linea: rgba(239, 62, 69, .25);
+  --linea-suave: rgba(245, 243, 241, .08);
+  --cobre: #ef3e45;           /* rojo neón: color de acento */
+  --cobre-oscuro: #c81d29;
+  --azul: #3a6fd8;            /* azul del poste de barbero */
+  --arena: #a8a1a0;           /* texto secundario */
+  --crema: #f5f3f1;
   --verde-wsp: #25d366;
   --ancho-max: 1180px;
   --serif: "Playfair Display", Georgia, serif;
@@ -138,7 +141,7 @@ img {
   text-transform: uppercase;
   letter-spacing: .22em;
   text-decoration: none;
-  color: var(--fondo);
+  color: #fff;
   background-color: var(--cobre);
   border: 1px solid var(--cobre);
   padding: 1.05rem 2rem;
@@ -159,7 +162,7 @@ img {
 
 .boton-borde:hover {
   background-color: var(--cobre);
-  color: var(--fondo);
+  color: #fff;
 }
 
 .boton-chico {
@@ -169,7 +172,7 @@ img {
 .boton-whatsapp {
   background-color: var(--verde-wsp);
   border-color: var(--verde-wsp);
-  color: #062b14;
+  color: #ffffff;
 }
 
 .boton-whatsapp:hover {
@@ -205,7 +208,7 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: rgba(10, 14, 12, .9);
+  background-color: rgba(11, 11, 13, .9);
   border-bottom: 1px solid var(--linea-suave);
   backdrop-filter: blur(8px);
 }
@@ -292,7 +295,7 @@ button:focus-visible {
 
 .menu a.brillo:not(.boton) {
   color: var(--crema);
-  text-shadow: 0 0 12px rgba(201, 138, 75, .85), 0 0 2px rgba(247, 243, 239, .6);
+  text-shadow: 0 0 12px rgba(239, 62, 69, .85), 0 0 2px rgba(247, 243, 239, .6);
 }
 
 .menu a.brillo:not(.boton)::after {
@@ -305,8 +308,8 @@ button:focus-visible {
 
 .menu a.boton.brillo {
   background: var(--cobre);
-  color: var(--fondo);
-  box-shadow: 0 0 18px rgba(201, 138, 75, .55);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(239, 62, 69, .55);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -346,9 +349,9 @@ button:focus-visible {
   text-align: center;
   padding: 5rem 1.5rem 7rem;
   background:
-    linear-gradient(180deg, rgba(10, 14, 12, .55) 0%, rgba(10, 14, 12, .85) 70%, var(--fondo) 100%),
+    linear-gradient(180deg, rgba(11, 11, 13, .55) 0%, rgba(11, 11, 13, .85) 70%, var(--fondo) 100%),
     url("../img/local/hero.jpg") center / cover no-repeat,
-    radial-gradient(ellipse at 50% 30%, #1d3129 0%, #0f1814 45%, var(--fondo) 80%);
+    radial-gradient(ellipse at 50% 30%, #2a0f13 0%, #131317 45%, var(--fondo) 80%);
 }
 
 /* Rayas finas en diagonal, como un poste de barbería muy sutil */
@@ -356,7 +359,7 @@ button:focus-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(135deg, rgba(201, 138, 75, .035) 0 2px, transparent 2px 22px);
+  background: repeating-linear-gradient(135deg, rgba(239, 62, 69, .035) 0 2px, transparent 2px 22px);
   pointer-events: none;
 }
 
@@ -700,7 +703,7 @@ button:focus-visible {
   right: 0;
   bottom: 0;
   padding: 3rem 1.5rem 1.25rem;
-  background: linear-gradient(transparent, rgba(10, 14, 12, .95));
+  background: linear-gradient(transparent, rgba(11, 11, 13, .95));
 }
 
 .tarjeta-barbero strong {
@@ -726,7 +729,7 @@ button:focus-visible {
   padding: 7rem 0;
   text-align: center;
   background:
-    radial-gradient(ellipse at center, rgba(201, 138, 75, .08), transparent 60%),
+    radial-gradient(ellipse at center, rgba(239, 62, 69, .08), transparent 60%),
     var(--fondo);
   border-top: 1px solid var(--linea-suave);
   border-bottom: 1px solid var(--linea-suave);
@@ -886,7 +889,7 @@ button:focus-visible {
 }
 
 .estado.abierto { color: var(--verde-wsp); }
-.estado.cerrado { color: #e0846b; }
+.estado.cerrado { color: #ff9f43; }
 
 .mapa {
   width: 100%;
@@ -907,8 +910,8 @@ button:focus-visible {
   padding: 6rem 0 4.5rem;
   border-bottom: 1px solid var(--linea);
   background:
-    repeating-linear-gradient(135deg, rgba(201, 138, 75, .03) 0 2px, transparent 2px 22px),
-    radial-gradient(ellipse at 50% 0%, #1d3129 0%, var(--fondo) 70%);
+    repeating-linear-gradient(135deg, rgba(239, 62, 69, .03) 0 2px, transparent 2px 22px),
+    radial-gradient(ellipse at 50% 0%, #2a0f13 0%, var(--fondo) 70%);
 }
 
 .encabezado-pagina .bajada {
@@ -1018,7 +1021,7 @@ button:focus-visible {
 /* Pseudoclase :checked — servicio elegido */
 .opcion-servicio input:checked + .opcion-contenido {
   border-color: var(--cobre);
-  background-color: rgba(201, 138, 75, .08);
+  background-color: rgba(239, 62, 69, .08);
 }
 
 .opcion-servicio input:checked + .opcion-contenido .opcion-detalle {
@@ -1066,7 +1069,7 @@ button:focus-visible {
 .hora.seleccionado {
   background-color: var(--cobre);
   border-color: var(--cobre);
-  color: var(--fondo);
+  color: #fff;
 }
 
 .leyenda {
@@ -1183,7 +1186,7 @@ textarea:focus {
 }
 
 input:not(:placeholder-shown):invalid {
-  border-color: #e0846b;
+  border-color: #ff9f43;
 }
 
 .formulario .boton {
@@ -1411,7 +1414,7 @@ input:not(:placeholder-shown):invalid {
 .boton.copiado {
   background-color: var(--verde-wsp);
   border-color: var(--verde-wsp);
-  color: #062b14;
+  color: #ffffff;
 }
 
 .pasos-wifi {
@@ -1447,7 +1450,7 @@ input:not(:placeholder-shown):invalid {
   inset: 0;
   border-radius: 50%;
   border: 6px solid var(--cobre);
-  box-shadow: 0 0 0 1px var(--linea), 0 0 40px rgba(201, 138, 75, .25), inset 0 0 30px rgba(0, 0, 0, .6);
+  box-shadow: 0 0 0 1px var(--linea), 0 0 40px rgba(239, 62, 69, .25), inset 0 0 30px rgba(0, 0, 0, .6);
   transition: transform 5s cubic-bezier(.17, .85, .25, 1);   /* frena despacio */
   overflow: hidden;
 }
@@ -1480,7 +1483,7 @@ input:not(:placeholder-shown):invalid {
 }
 
 .porcion-texto.destacado span {
-  color: var(--fondo);
+  color: #fff;
 }
 
 /* Flecha indicadora arriba */
@@ -1542,7 +1545,7 @@ input:not(:placeholder-shown):invalid {
 
 .resultado.gano {
   border-color: var(--cobre);
-  background: radial-gradient(ellipse at top, rgba(201, 138, 75, .18), transparent 70%);
+  background: radial-gradient(ellipse at top, rgba(239, 62, 69, .18), transparent 70%);
 }
 
 .resultado-etiqueta {
@@ -1663,7 +1666,7 @@ input:not(:placeholder-shown):invalid {
   padding: 1.25rem 1.5rem;
   text-align: center;
   border: 1px dashed var(--cobre);
-  background: rgba(201, 138, 75, .1);
+  background: rgba(239, 62, 69, .1);
 }
 
 .aviso-premio p {
@@ -1974,7 +1977,7 @@ input:not(:placeholder-shown):invalid {
 }
 
 /* =========================================================
-   LOGO ORIGINAL DE MONKEY BARBER (imágenes PNG)
+   LOGO ORIGINAL DE ALT BARBERS (imágenes PNG)
    ========================================================= */
 .marca-mono {
   height: 48px;
@@ -2066,7 +2069,7 @@ input:not(:placeholder-shown):invalid {
   font-size: 1.8rem;
   line-height: 1;
   color: var(--crema);
-  background-color: rgba(10, 14, 12, .55);
+  background-color: rgba(11, 11, 13, .55);
   border: 1px solid var(--linea);
   border-radius: 50%;
   cursor: pointer;
@@ -2074,7 +2077,7 @@ input:not(:placeholder-shown):invalid {
 }
 
 .carrusel-flecha:hover {
-  background-color: rgba(10, 14, 12, .85);
+  background-color: rgba(11, 11, 13, .85);
   border-color: var(--cobre);
   color: var(--cobre);
 }
@@ -2150,8 +2153,8 @@ input:not(:placeholder-shown):invalid {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, rgba(10, 14, 12, .78) 0%, rgba(10, 14, 12, .5) 75%),
-    linear-gradient(180deg, rgba(10, 14, 12, .35), rgba(10, 14, 12, .9));
+    radial-gradient(ellipse at center, rgba(11, 11, 13, .78) 0%, rgba(11, 11, 13, .5) 75%),
+    linear-gradient(180deg, rgba(11, 11, 13, .35), rgba(11, 11, 13, .9));
 }
 
 .encabezado-pagina.con-videos .contenedor {
@@ -2217,7 +2220,7 @@ input:not(:placeholder-shown):invalid {
 
 @keyframes golpe {
   0%   { transform: scale(1); }
-  40%  { transform: scale(1.35); color: #e9b47a; }
+  40%  { transform: scale(1.35); color: #ff6b72; }
   100% { transform: scale(1); }
 }
 
@@ -2290,7 +2293,7 @@ input:not(:placeholder-shown):invalid {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(22, 35, 30, 0) 55%, var(--verde-claro) 100%);
+  background: linear-gradient(180deg, rgba(27, 27, 33, 0) 55%, var(--verde-claro) 100%);
 }
 
 .tarjeta-servicio.con-foto:hover .tarjeta-foto img {
@@ -2309,4 +2312,60 @@ input:not(:placeholder-shown):invalid {
   .tarjeta-foto img {
     transition: none;
   }
+}
+
+
+/* =========================================================
+   ALT BARBERS: detalles de neón y tarjeta de ubicación
+   ========================================================= */
+/* Las palabras destacadas brillan como el cartel de neón */
+h1 em, h2 em {
+  text-shadow: 0 0 18px rgba(239, 62, 69, .45);
+}
+
+.hero {
+  background:
+    linear-gradient(180deg, rgba(11, 11, 13, .72) 0%, rgba(11, 11, 13, .88) 70%, var(--fondo) 100%),
+    url("../img/local/hero.jpg") center / cover no-repeat,
+    var(--fondo);
+}
+
+.hero-emblema {
+  height: 250px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 30px rgba(239, 62, 69, .35)) drop-shadow(0 10px 25px rgba(0, 0, 0, .6));
+}
+
+.marca-mono { height: 52px; }
+.pie-mono { height: 110px; }
+
+/* Ubicación sin mapa: la dirección se pasa por WhatsApp */
+.tarjeta-ubicacion {
+  flex: 1;
+  align-self: center;
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background-color: var(--verde-claro);
+  border: 1px solid var(--linea);
+  outline: 1px solid var(--linea-suave);
+  outline-offset: -8px;
+}
+
+.tarjeta-ubicacion img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.tarjeta-ubicacion p:not(.etiqueta) {
+  color: var(--arena);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .hero-emblema { height: 180px; }
+  .marca-mono { height: 44px; }
 }
