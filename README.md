@@ -1,2 +1,2 @@
-# monkey-barber
-Sitio web de Monkey Barber (Bahia Blanca) - TP Final Integrador de Diseño Web
+# Alt Barbers
+Sitio web de Alt Barbers (Bahía Blanca), la barbería de Brian Altamiranda. Antes Monkey Barber, TP Final Integrador de Diseño Web.

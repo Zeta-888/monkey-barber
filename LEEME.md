@@ -1,4 +1,6 @@
-# Monkey Barber: sitio web (TP Final Integrador, Diseño Web)
+# Alt Barbers: sitio web
+
+> Antes se llamaba **Alt Barbers** (TP Final Integrador de Diseño Web). En noviembre de 2026 el local cerró y Brian abrió **Alt Barbers** en su casa, así que se cambiaron el nombre, el logo, los colores (rojo neón) y los textos.
 
 ## Cómo abrirlo
 
@@ -22,7 +24,7 @@ js/datos.js       Datos del negocio: servicios, precios, horarios, WhatsApp
 js/main.js        Menú móvil, menú que se ilumina al bajar, horarios, tarjetas de servicios, reseñas, carrusel de Brian, animación de los números, videos y formulario de contacto
 js/turnos.js      Lógica de la reserva de turnos
 img/qr/           Códigos QR del cartel
-img/logo/         Logo de Monkey Barber: el mono (PNG) y el texto dorado vectorizado (monkey-barber.svg, nítido en cualquier tamaño; monkey-barber-alta.png en alta resolución para redes o impresión)
+img/logo/         Logo de Alt Barbers: el mono (PNG) y el texto dorado vectorizado (monkey-barber.svg, nítido en cualquier tamaño; monkey-barber-alta.png en alta resolución para redes o impresión)
 img/servicios-fotos/  Fotos de las tarjetas de servicios (corte regular, niños y jubilados)
 img/local/        Foto de la portada (`hero.jpg`) y fotos de Brian
 img/cortes/       Fotos de la galería de cortes
@@ -64,7 +66,7 @@ Como el sitio no tiene servidor, los horarios ocupados que se ven son de ejemplo
 - **El premio vale solo ese día**, en el servicio de esa visita (`VALIDEZ_PREMIO_DIAS = 0`). En la pantalla quedan el premio, un código y la hora del giro.
 - **Para probar la ruleta varias veces:** en `panel.html` está el botón "Borrar tirada de este navegador", que reinicia la ruleta solo en el navegador donde se toca.
 - Para cambiar todos los códigos (por ejemplo, si alguien descubre el panel), se cambia el número `CLAVE_RULETA` en `datos.js`.
-- **Los QR son de ejemplo:** el de WiFi tiene la red `MonkeyBarber_Clientes` y la clave `monkey2026`, y el de la página del local apunta a una dirección provisoria. Hay que generarlos de nuevo con los datos reales y con la dirección del sitio publicado (por ejemplo en GitHub Pages).
+- **Los QR son de ejemplo:** el de WiFi tiene la red `AltBarbers_Clientes` y la clave `alt2026`, y el de la página del local apunta a una dirección provisoria. Hay que generarlos de nuevo con los datos reales y con la dirección del sitio publicado (por ejemplo en GitHub Pages).
 - **Para imprimir el cartel:** abrí `cartel.html`, tocá Ctrl+P, elegí A4 vertical y activá "Gráficos de fondo".
 - **Limitación:** como no hay servidor, el código del día se calcula con una fórmula que está en el JavaScript. Alguien con conocimientos podría encontrarla leyendo el código, pero igual tendría que girar delante de Brian para que el premio valga. La solución completa (sorteo y registro en un servidor) queda como mejora futura.
 
@@ -78,4 +80,14 @@ Como el sitio no tiene servidor, los horarios ocupados que se ven son de ejemplo
 ## Reseñas de Google
 
 - Las reseñas están en `js/datos.js`, en `RESENAS`: puntaje, cantidad, fecha de actualización y la lista que se muestra en el inicio. Se copiaron de Google Maps en octubre de 2026 y se actualizan a mano.
-- Los botones "Ver todas en Google" y "Dejá tu reseña" llevan a la ficha real de Monkey BarberClub en Google Maps. La página del local también tiene el botón para dejar una reseña.
+- Los botones "Ver todas en Google" y "Dejá tu reseña" llevan a la ficha real de Alt Barbers (local anterior) en Google Maps. La página del local también tiene el botón para dejar una reseña.
+
+
+## Cambio a Alt Barbers (noviembre de 2026)
+
+- **Logo:** `img/logo/alt-barbers-emblema.svg` (emblema con el poste de barbero y la cinta roja), `alt-barbers-emblema-claro.svg` (versión para fondo claro, usada en el cartel) y `alt-barbers.svg` (texto "ALT BARBERS" del encabezado). Los archivos viejos del mono quedaron en la carpeta pero ya no se usan.
+- **Colores:** la paleta está en `:root` de `css/estilos.css`. El acento pasó de cobre a rojo neón (`--cobre: #ef3e45`, se mantuvo el nombre de la variable) y se sumó `--azul`.
+- **Dirección:** por ahora solo se muestra "Bahía Blanca". La dirección exacta se pasa por WhatsApp al confirmar el turno. Cuando sea pública, se carga en `NEGOCIO.direccion` y `NEGOCIO.mapa` de `datos.js` y se vuelve a poner el mapa.
+- **Portada y "La casa":** usan el video del cartel de neón que publicó Brian (`img/local/hero.jpg`, `video/la-casa.*`).
+- **Reseñas:** están ocultas (`RESENAS.mostrar = false` en `datos.js`) porque eran de la ficha de Google del local anterior. Se vuelven a mostrar cuando Alt Barbers tenga su ficha.
+- **Instagram:** se usa la cuenta de Brian, @altamirandabrai.
